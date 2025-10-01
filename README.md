@@ -25,7 +25,7 @@ A natural language image and video search tool powered by [Google's SigLIP 2 mod
 
 1. Either clone or download the repository in any directory (it doesn’t have to contain pictures):
 ```bash
-git clone https://github.com/Gabrjiele/siglip2-naflex-search?tab=readme-ov-file
+git clone https://github.com/Gabrjiele/siglip2-naflex-search
 ```
 
 2. Install dependencies:
