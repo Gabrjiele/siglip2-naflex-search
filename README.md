@@ -187,8 +187,10 @@ Embeddings are stored in SQLite with automatic management:
 - Index incrementally → only new/modified files are processed
 
 </details>
+
 <details>
 <summary><h2>Technical details</h2></summary>
+
 - **Model**: Google SigLIP 2 with NaFlex architecture
 - **Embedding size**: 1152
 - **Similarity metric**: Cosine similarity (dot product of normalized vectors)
