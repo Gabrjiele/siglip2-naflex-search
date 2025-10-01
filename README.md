@@ -1,6 +1,13 @@
 # SigLIP 2 NaFlex Image and Video Search Tool
 
 A natural language image and video search tool powered by [Google's SigLIP 2 model](https://huggingface.co/google/siglip2-so400m-patch16-naflex) with NaFlex architecture. Search through your local image and video collections using natural language queries or image similarity.
+<br>
+<br>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/89008d71-d2d8-4091-b409-44bf6fdb24f4" width="90%">
+</p>
+<br>
+<br>
 
 ## Features
 
@@ -47,11 +54,26 @@ The GUI provides:
 - Interactive search with preview
 - Result visualization with similarity scores
 
+Example queries:
+<table align="center" width="100%">
+  <tr>
+    <td width="20%"><img src="https://github.com/user-attachments/assets/dc58324a-a315-471f-9791-37aa981c7939" style="width: 100%; height: auto;" alt="Immagine 1"></td>
+    <td width="20%"><img src="https://github.com/user-attachments/assets/0ec7833e-cb60-4e43-a149-049ffd7f72ce" style="width: 100%; height: auto;" alt="Immagine 2"></td>
+    <td width="20%"><img src="https://github.com/user-attachments/assets/d1fe1441-7d04-4718-b5c0-4bf83c0d0f41" style="width: 100%; height: auto;" alt="Immagine 3"></td>
+    <td width="20%"><img src="https://github.com/user-attachments/assets/d15260f6-b74c-4136-b74c-c3dd0da2a283" style="width: 100%; height: auto;" alt="Immagine 3"></td>
+    <td width="20%"><img src="https://github.com/user-attachments/assets/92e195ea-b274-4157-8791-fc01458ce924" style="width: 100%; height: auto;" alt="Immagine 3"></td>
+  </tr>
+</table>
+
 <details>
 <summary><h4>GUI quick start guide</h4></summary>
->  **✅ Advice for a more convenient use ✅**  
+  
+> **✅ Advice for a more convenient use ✅**  
+>  
 > Model settings (number of patches, video frame parameters, and images folder) only take effect **during the indexing phase**.  
+>  
 > Once files are indexed, the embeddings stored in the database remain fixed and will not change if you adjust the settings later.  
+>  
 > So, for convenience, you can use the search tool without changing these parameters, and only tweak them when indexing new images or re-indexing an existing collection.
 
 **First Time Setup (Creating a new database):**
@@ -175,6 +197,7 @@ Embeddings are stored in SQLite with automatic management:
 - **Video processing**: OpenCV (cv2) for frame extraction
 
 </details>
+
 ## License
 
 MIT License - See LICENSE file for details
