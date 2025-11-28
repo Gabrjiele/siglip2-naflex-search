@@ -4,7 +4,7 @@ A natural language image and video search tool powered by [Google's SigLIP 2 mod
 <br>
 <br>
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/b59736bb-c2f9-4c89-ba09-a5e73ee4d5a7" width="90%">
+  <img src="https://github.com/user-attachments/assets/4bc07e38-eda0-4297-89e5-2f3a359cfc9f" width="90%">
 
 </p>
 <br>
