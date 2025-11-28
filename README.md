@@ -45,7 +45,7 @@ pip install torch-directml
 Simply run the script without arguments:
 
 ```bash
-python sigLIP2_en.py
+python S2N_Search.py
 ```
 
 The GUI provides:
@@ -114,22 +114,22 @@ Example queries:
 
 Index a folder:
 ```bash
-python sigLIP2_en.py --index /path/to/images --db my_database.db
+python S2N_Search.py --index /path/to/images --db my_database.db
 ```
 
 Search by text:
 ```bash
-python sigLIP2_en.py --search-text "sunset over mountains" --db my_database.db --top-k 20
+python S2N_Search.py --search-text "sunset over mountains" --db my_database.db --top-k 20
 ```
 
 Search by image:
 ```bash
-python sigLIP2_en.py --search-image /path/to/query.jpg --db my_database.db
+python S2N_Search.py --search-image /path/to/query.jpg --db my_database.db
 ```
 
 Combined search (multimodal):
 ```bash
-python sigLIP2_en.py --search-text "red car" --search-image car.jpg --db my_database.db
+python S2N_Search.py --search-text "red car" --search-image car.jpg --db my_database.db
 ```
 
 #### CLI Options
@@ -138,25 +138,22 @@ python sigLIP2_en.py --search-text "red car" --search-image car.jpg --db my_data
 - `--search-text TEXT`: Text query
 - `--search-image PATH`: Image query path
 - `--top-k N`: Number of results (default: 10)
-- `--db PATH`: Database file path (default: siglip2_naflex_embeddings.db)
+- `--db PATH`: Database file path (default: siglip2_embeddings.db)
 - `--device {cuda,cpu,dml}`: Force specific device
 - `--max-patches N`: Max patches for model (default: 256)
-- `--video-frames N`: Frames to extract per video (default: 5)
-- `--video-method {uniform,start,mid,end}`: Frame extraction method
 - `--cleanup`: Remove orphaned embeddings
 
 </details>
 
 ## Video Support
 
+> [!NOTE]
+> **Video Analysis Beta**: Video search is currently experimental. It works by averaging embeddings from a few frames, which means it captures the general "vibe" or dominant content but lacks granular temporal understanding (e.g., finding a specific action at a specific second). Improved temporal analysis is planned for future updates.
+
 The tool supports common video formats:
 - MP4, AVI, MOV, MKV, FLV, WMV, WebM
 
-Videos are indexed by extracting representative frames using different methods:
-- `uniform`: Evenly distributed frames across video
-- `start`: First N frames
-- `mid`: Frames around the middle
-- `end`: Last N frames
+Videos are indexed by extracting representative frames using the `uniform` method (evenly distributed frames across video).
 
 <details>
 <summary><h2>Model configuration</h2></summary>
@@ -173,7 +170,7 @@ The tool uses Google's `siglip2-so400m-patch16-naflex` model with configurable p
 <summary><h2>Database management</h2></summary>
 
 Embeddings are stored in SQLite with automatic management:
-- Only modified nor new files are re-indexed
+- Only modified or new files are re-indexed
 - Deleted files can be cleaned up with `--cleanup` flag
 - Each entry stores filepath, timestamp, embedding, and file type
 
